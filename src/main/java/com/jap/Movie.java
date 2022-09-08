@@ -6,8 +6,12 @@ public class Movie {
     private String genre;
     private String releaseDate;
 
-    // create getter and setter for all the above attributes
-
+    public Movie(int movieId, String movieName, String genre, String releaseDate) {
+        this.movieId = movieId;
+        this.movieName = movieName;
+        this.genre = genre;
+        this.releaseDate = releaseDate;
+    }
 
     public int getMovieId() {
         return movieId;
@@ -38,15 +42,6 @@ public class Movie {
     }
 
     public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate;
-    }
-
-    //complete the parameterized constructor
-
-    public Movie(int movieId, String movieName, String genre, String releaseDate) {
-        this.movieId = movieId;
-        this.movieName = movieName;
-        this.genre = genre;
         this.releaseDate = releaseDate;
     }
 }
