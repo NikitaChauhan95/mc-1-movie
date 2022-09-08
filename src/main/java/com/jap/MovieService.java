@@ -4,7 +4,19 @@ import java.util.*;
 
 public class MovieService {
 
-    public Map<Movie,Integer> getMovieWithRating(){
+    public static void main(String[] args) {
+        MovieService movieService = new MovieService();
+        Map<Movie, Integer> map = movieService.getMovieWithRating();
+        Set set = movieService.getMovieNameWithRating4(map, 4);
+        System.out.println("Rating 4" + set);
+        Map map1 = movieService.getAllMoviesWithComedy(map);
+        System.out.println("Comedy Movie " + map1);
+        List list = movieService.getMovieWithHighestRating(map);
+        System.out.println("--------------");
+        System.out.println("Highest Rating " + list);
+    }
+
+    public Map<Movie, Integer> getMovieWithRating() {
 
         //create five movie object by calling Movie class parameterized constructor
 
@@ -18,7 +30,7 @@ public class MovieService {
         return map;
     }
 
-    public Set<String> getMovieNameWithRating4(Map<Movie,Integer> map,int rating){
+    public Set<String> getMovieNameWithRating4(Map<Movie, Integer> map, int rating) {
         //Create a TreeSet object
 
         //Use entrySet() method to iterate through the map object
@@ -29,10 +41,10 @@ public class MovieService {
 
         //return the TreeSet object
 
-      return null;
+        return null;
     }
 
-    public List<String> getMovieWithHighestRating(Map<Movie,Integer> map){
+    public List<String> getMovieWithHighestRating(Map<Movie, Integer> map) {
         //Create a ArrayList object of type String
 
 
@@ -48,7 +60,8 @@ public class MovieService {
         List l = new ArrayList();
         return l;
     }
-    public Map<String,String> getAllMoviesWithComedy(Map<Movie,Integer> map){
+
+    public Map<String, String> getAllMoviesWithComedy(Map<Movie, Integer> map) {
         //Create a Map object
 
         //use entrySet to iterate through the Map object
@@ -60,17 +73,5 @@ public class MovieService {
         Map map1 = new HashMap();
         return map1;
 
-    }
-
-    public static void main(String[] args) {
-        MovieService movieService = new MovieService();
-        Map <Movie,Integer> map = movieService.getMovieWithRating();
-        Set set = movieService.getMovieNameWithRating4(map,4);
-        System.out.println("Rating 4" + set);
-        Map map1 = movieService.getAllMoviesWithComedy(map);
-        System.out.println("Comedy Movie " + map1);
-        List list = movieService.getMovieWithHighestRating((Map<Movie, Integer>) map);
-        System.out.println("--------------");
-        System.out.println("Highest Rating " +list);
     }
 }
